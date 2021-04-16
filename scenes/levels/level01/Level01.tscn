@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/word/Word.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="ShaderMaterial" id=6]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 50, 42 )
+
+[node name="Level01" type="Node2D"]
+
+[node name="Shoress" type="RigidBody2D" parent="."]
+modulate = Color( 0.431373, 0.619608, 0.0509804, 1 )
+material = SubResource( 2 )
+
+[node name="Shore05" type="CollisionPolygon2D" parent="Shoress"]
+polygon = PoolVector2Array( -17, 0, 0, 1, 0, 603, -13, 602 )
+
+[node name="Shore06" type="CollisionPolygon2D" parent="Shoress"]
+position = Vector2( 1040, 1 )
+polygon = PoolVector2Array( -17, 0, 0, 1, 0, 603, -13, 602 )
+
+[node name="Shore07" type="CollisionPolygon2D" parent="Shoress"]
+polygon = PoolVector2Array( 1024, 3, 1023, -17, 0, -17, 1, -2 )
+
+[node name="Shore08" type="CollisionPolygon2D" parent="Shoress"]
+position = Vector2( 1, 606 )
+polygon = PoolVector2Array( 1024, 3, 1023, -17, 0, -17, 1, -2 )
+
+[node name="Shore04" type="CollisionPolygon2D" parent="Shoress"]
+modulate = Color( 0.164706, 0.0431373, 0.0431373, 1 )
+self_modulate = Color( 0.439216, 0.00784314, 0.00784314, 1 )
+material = SubResource( 6 )
+polygon = PoolVector2Array( -2, 164, 315.197, 171.812, 315.197, 72.9233, 429.068, 75.92, 427.57, 263.208, 700.262, 263.208, 700.262, 92.4013, 797.652, 92.4013, 800.648, 282.686, -0.945984, 275.195 )
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2( 17.9797, 20.9763 )
+
+[node name="Word" parent="Player" instance=ExtResource( 1 )]
+position = Vector2( 26.9695, 23.9729 )
+
+[node name="Shores" type="StaticBody2D" parent="."]
+modulate = Color( 0.901961, 0.85098, 0.109804, 1 )
+
+[node name="Shore01" type="CollisionShape2D" parent="Shores"]
+position = Vector2( 173.804, 50.9424 )
+shape = SubResource( 7 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Shores/Shore01"]
+position = Vector2( -2.00925, -7.49155 )
+scale = Vector2( 0.958904, 1 )
+z_index = -3
+color = Color( 0.0392157, 0.937255, 0.0980392, 1 )
+polygon = PoolVector2Array( -47.3292, -45.4427, -48.8917, 51.9473, 60.4848, 51.9473, 62.0473, -45.4427 )
+
+[node name="Shore02" type="CollisionShape2D" parent="Shores"]
+position = Vector2( 173.804, 50.9424 )
+shape = SubResource( 7 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Shores/Shore02"]
+position = Vector2( 388.871, -15.881 )
+scale = Vector2( 0.985916, 0.815385 )
+z_index = -3
+color = Color( 0.0392157, 0.937255, 0.0980392, 1 )
+polygon = PoolVector2Array( -47.3292, -45.4427, -48.8917, 146.341, 62.0472, 149.337, 62.0473, -45.4427 )
+
+[node name="Shore04" type="CollisionPolygon2D" parent="Shores"]
+modulate = Color( 0.737255, 0.521569, 0.521569, 1 )
+self_modulate = Color( 0.34902, 0.0352941, 0.0352941, 1 )
+polygon = PoolVector2Array( 881, 1, 878, 374, 113, 374, 113, 514, 962, 517, 994, 518, 1026, 519, 1022, 0 )
